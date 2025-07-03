@@ -118,14 +118,14 @@ void draw() {
     translate(width / 2, height / 2);
 
     // Dibujar todos los puntos guardados
-    for (int i = 0; i < puntos.size(); i++) {
-      PVector p = puntos.get(i);
+    for (int i = 0; i < puntos.size(); i++) { //.size accede al tamaño de la lista
+      PVector p = puntos.get(i); // .get para obtener el valor de la posición de la lista
       float hue = coloresHue.get(i);
       float tam = tamanos.get(i);
 
       fill(hue, 80, 100);
       noStroke();
-      ellipse(p.x, p.y, tam, tam);
+      ellipse(p.x, p.y, tam, tam); //p. asigna el valor a las variables x - y
     }
 
     // Agregar un nuevo punto si aún no terminamos
@@ -144,7 +144,7 @@ void draw() {
         float hueAzul = map(sin(angle + frameCount * 0.02), -1, 1, 60, 90);
 
         //Guarda la información en el Array list
-        puntos.add(new PVector(x, y));
+        puntos.add(new PVector(x, y)); // .add agregar información a la lista
         coloresHue.add(hueAzul);
         tamanos.add(tam);
 
