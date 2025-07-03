@@ -27,7 +27,7 @@ void setup() {
   size(1000, 1000);
   background(255);
   //noStroke();
-  frameRate(1);
+  //frameRate(1);
 
   //Importar audio
   //Sketch + Add file + select audio
@@ -71,7 +71,7 @@ void draw() {
   }
   z += 10;
   for (int i = 0; i < z; i += 5) {
-    fill(random(100), random(80), random(200));
+    stroke(random(100), random(80), random(200));
     line(i, 0, i, height);
   }
 }
