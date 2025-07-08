@@ -1,7 +1,11 @@
-PImage panda;
+PImage cuento;
 
 void setup(){
   size(600,600);
-  panda = loadImage();
-  panda.loadPixels();
+  cuento = loadImage("cuento.png");
+  cuento.loadPixels();
+}
+
+void draw(){
+  image(cuento,0,0);
 }
