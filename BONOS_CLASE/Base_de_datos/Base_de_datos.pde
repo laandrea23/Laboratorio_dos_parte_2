@@ -22,3 +22,18 @@ void setup() {
     println(" | App Usage: " + appUsageTime[i] + " min/day | Screen On: " + screenOnTime[i] + " hours/day");
   }
 }
+
+void draw() {
+  background(0);
+  //// Ejemplo escalabilidad con map
+  //float value = 10;
+  //float m = map(value,0,100,0,1000);
+  //println(m);
+
+  for (int i = 0; i < nSamples; i++) {
+    float x = map(appUsageTime[i], 0, max(appUsageTime), 0, width);
+    float y = map(screenOnTime[i], 0, max(screenOnTime), 0, width);
+
+    ellipse(x, y, 10, 10);
+  }
+}
