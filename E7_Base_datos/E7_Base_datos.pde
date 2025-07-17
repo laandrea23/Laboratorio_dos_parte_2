@@ -86,6 +86,18 @@ void draw() {
     color c = lerpColor(amarillo, verde, humedadNorm);
 
     drawFlower(x, y, size, petals, c);
+    
+    //Función que si se pasa sobre alguna flor se pueda ver los datos 
+    //Aunque no se ve muy claro en donde hay muchas flores se puede porbar el las flores mas lejanas
+    //muy útil si se quiere identificar los valores
+    
+    if (dist(mouseX, mouseY, x, y) < 10) {
+    fill(0);
+    textSize(12);
+    textAlign(LEFT);
+    //Tipo de concatenado de strings
+    text("Temp: " + nf(temperature[i], 1, 1) + "°C\nHum: " + nf(humidity[i], 1, 1) + "%", x + 10, y - 10);
+    }
   }
 }
 
